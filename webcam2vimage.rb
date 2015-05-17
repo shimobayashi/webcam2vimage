@@ -8,7 +8,8 @@ require 'RMagick'
 puts 'read settings...'
 
 settings = JSON.parse(STDIN.read)
-exit -1 unless settings['sleep']
+p settings
+exit -1 unless settings['sleep'] == '1'
 
 puts 'captureing...'
 
