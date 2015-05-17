@@ -4,6 +4,9 @@ require 'net/http'
 require 'uri'
 require 'base64'
 
+settings = JSON.parse(STDIN.read)
+exit -2 unless settings['sleep']
+
 jpeg = `fswebcam --skip 10 --resolution 640x480 --jpeg -1 --greyscale -`
 exit -1 unless jpeg
 
