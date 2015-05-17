@@ -4,6 +4,7 @@ require 'net/http'
 require 'uri'
 require 'base64'
 require 'RMagick'
+require 'json'
 
 puts 'read settings...'
 
