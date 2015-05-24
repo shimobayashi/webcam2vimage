@@ -12,6 +12,10 @@ settings = JSON.parse(STDIN.read)
 p settings
 exit -1 unless settings['sleep'] == '1'
 
+# たまに寝てる間にMi-Lightが勝手に点くことがあるので、ついでに消す
+p `bash -c 'echo -ne "\\x41\\x00\\x55" > /dev/udp/192.168.10.16/8899'`
+p $?
+
 puts 'captureing...'
 
 image_list = Magick::ImageList.new
