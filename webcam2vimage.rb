@@ -35,7 +35,7 @@ image_list.write('/var/tmp/webcam2vimage.gif') #XXX to_blob を呼ぶとクラ�
 puts 'uploading...'
 
 res = Net::HTTP.post_form(
-  URI.parse('http://vimage.herokuapp.com/images/new'),
+  URI.parse("#{ENV['VIMAGE_ROOT']}images/new"),
   {
     title: Time.now.to_s,
     url: nil,
