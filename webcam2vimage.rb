@@ -10,7 +10,7 @@ puts 'read settings...'
 
 settings = JSON.parse(STDIN.read)
 p settings
-exit -1 unless settings['sleep'] == '1'
+exit -1 if settings['sleep'] == '0'
 
 puts 'captureing...'
 
