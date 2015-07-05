@@ -20,7 +20,7 @@ while true
   redo if blob == ''
 
   img = Magick::Image.from_blob(blob).first
-  img.delay = 50
+  img.delay = 25
   image_list.push img
 
   break if image_list.size >= 18
