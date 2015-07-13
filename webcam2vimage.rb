@@ -16,15 +16,15 @@ puts 'captureing...'
 
 image_list = Magick::ImageList.new
 while true
-  blob = `fswebcam --skip 10 --resolution 160x120 --png 0 --greyscale --no-banner --quiet -`
+  blob = `fswebcam --skip 10 --resolution 320x240 --png 0 --greyscale --no-banner --quiet -`
   redo if blob == ''
 
   img = Magick::Image.from_blob(blob).first
   img.delay = 25
   image_list.push img
 
-  break if image_list.size >= 6
-  sleep 30
+  break if image_list.size >= 18
+  sleep 10
 end
 image_list.iterations = 0
 image_list = image_list.quantize(64)
